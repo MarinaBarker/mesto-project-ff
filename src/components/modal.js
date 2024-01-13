@@ -25,12 +25,14 @@ export function closeModal (popup) {
 //функция закрытия МО через overlay
  function closeOverlay (evt) {
     if (evt.target.classList.contains('popup')) {
-        closeModal(document.querySelector('.popup_is-opened'))
+        closeModal(evt.target);
     }
 };
 
 //функция закрытия МО на крестик
  function closeX (evt) {
     if (evt.target.classList.contains('popup__close')){
-      closeModal(document.querySelector('.popup_is-opened'))
+      closeModal(document.querySelector('.popup_is-opened'));
     }};
+
+  
