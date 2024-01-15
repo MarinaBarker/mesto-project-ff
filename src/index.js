@@ -42,22 +42,23 @@ editProfileButton.addEventListener('click', function() {
 openModal(editPopup);
   nameInput.value = name.textContent;
   jobInput.value = job.textContent;
+});
 
-//изменение формы  
-formElement.addEventListener('submit', handleFormSubmit);
+//редактирование профиля
+formElement.addEventListener('submit', handleFormSubmit);  
 function handleFormSubmit(evt) {
   evt.preventDefault();
   name.textContent = nameInput.value;
   job.textContent = jobInput.value;
   closeModal(document.querySelector('.popup_is-opened'));
-  formElement.removeEventListener('submit', handleFormSubmit);
   };
-});
 
 //слушатель события открытия формы добавления новой карточки
 createCardButton.addEventListener('click', function () {
   openModal(createCardPopup);
+});
 
+//добавление картинки
 formPopup.addEventListener('submit', formSubmit);
   function formSubmit(evt) {
   evt.preventDefault();
@@ -67,9 +68,7 @@ formPopup.addEventListener('submit', formSubmit);
   placesList.prepend(newCard);
   formPopup.reset();
   closeModal(document.querySelector('.popup_is-opened'));
-  formPopup.removeEventListener('submit', formSubmit);
   };
-});
 
 //функция открытия карточки фуллскрин
 function openImage(name, link) {
