@@ -5,3 +5,14 @@
   background: #fff;
   padding: 25px 20px;
 }
+
+.card__elements {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.card__like-counter {
+  display: flex;
+  justify-content: center;
+}

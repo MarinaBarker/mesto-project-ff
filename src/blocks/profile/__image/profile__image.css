@@ -9,6 +9,25 @@
   margin: 0 29px 0 0;
 }
 
+.profile__image:hover {
+  opacity: 0.4;
+}
+
+.avatar__edit-button {
+  width: 120px;
+  height: 120px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+
+.avatar__edit-button:hover {
+  background: url('../../../images/edit-icon.svg') center no-repeat;
+  background-size: 20%;
+}
+
 @media screen and (max-width: 740px) {
   .profile__image {
     margin: 0 10px 0 0;
@@ -20,3 +39,5 @@
     margin-right: 0;
   }
 }
+
+
