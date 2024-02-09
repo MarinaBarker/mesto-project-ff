@@ -12,16 +12,16 @@ const buttonAddCard = document.querySelector('.profile__add-button'); //кноп
 const avatarEditButton = document.querySelector('.avatar__edit-button'); //кнопка обновления аватара
 //попапы
 const editPopup = document.querySelector('.popup_type_edit'); //попап редактирование профиля
-const createCardPopup = document.querySelector('.popup_type_new-card'); //попап добавления новой карточки
+const popupCardCreate = document.querySelector('.popup_type_new-card'); //попап добавления новой карточки
 const popupImageFull = document.querySelector('.popup_type_image'); //попап фуллскрин
 const editAvatar = document.querySelector('.popup_avatar_image'); //попап аватара
 const avatarForm = document.forms['new_avatar'];
 const avatarLink = avatarForm.querySelector('.popup__input_type_avatar');
-const submitAvatarButton = avatarForm.querySelector('.popup__button');
+const avatarButtonSubmit = avatarForm.querySelector('.popup__button');
 //формы
 const profileForm = document.forms['edit_profile'];
 const newPlaceForm = document.forms['new_place'];
-const submitButton = profileForm.querySelector('.popup__button');
+const profileButtonSubmit = profileForm.querySelector('.popup__button');
 //наполнение карточки
 const popupImage = document.querySelector('.popup__image'); //фото
 const popupCaption = document.querySelector('.popup__caption'); //описание 
@@ -36,14 +36,14 @@ const avatar = document.querySelector('.profile__image');
 const formPopup = document.querySelector('.popup_type_new-card .popup__form');
 const typeName = formPopup.querySelector('.popup__input_type_card-name');
 const typeLink = formPopup.querySelector('.popup__input_type_url');
-const submitCardButton = newPlaceForm.querySelector('.popup__button');
+const cardButtonSubmit = newPlaceForm.querySelector('.popup__button');
 
 //визуализация загрузки
-function renderLoading(isLoading, submitButton) {
+function renderLoading(isLoading, profileButtonSubmit) {
   if (isLoading) {
-    submitButton.textContent = 'Сохранение...';
+    profileButtonSubmit.textContent = 'Сохранение...';
   } else {
-    submitButton.textContent = 'Сохранить';
+    profileButtonSubmit.textContent = 'Сохранить';
   }
 };
 
@@ -71,10 +71,10 @@ avatarEditButton.addEventListener('click', function() {
 })
 
 //изменение аватара
-avatarForm.addEventListener('submit', avatarSubmit);
-function avatarSubmit(evt) {
+avatarForm.addEventListener('submit', submitAvatar);
+function submitAvatar(evt) {
   evt.preventDefault();
-  renderLoading(true, submitAvatarButton);
+  renderLoading(true, avatarButtonSubmit);
   const link = {
     avatar: avatarLink.value
   }
@@ -85,7 +85,7 @@ function avatarSubmit(evt) {
     avatarForm.reset();
   })
   .catch((err) => console.log("Ошибка"))
-  .finally(() => renderLoading(false, submitAvatarButton));
+  .finally(() => renderLoading(false, avatarButtonSubmit));
 };
 
 //открытие окна редактирования профиля
@@ -100,7 +100,7 @@ buttonOpenPopupProfile.addEventListener('click', function() {
 form.addEventListener('submit', submitEditProfile);  
 function submitEditProfile(evt) {
   evt.preventDefault();
-  renderLoading(true, submitButton);
+  renderLoading(true, profileButtonSubmit);
   changeUserInfo(nameInput, jobInput)
     .then(() => {
   profileName.textContent = nameInput.value;
@@ -108,20 +108,20 @@ function submitEditProfile(evt) {
   closeModal(editPopup);
   })
     .catch((err) => console.log(err))
-    .finally(() => renderLoading(false, submitButton));
+    .finally(() => renderLoading(false, profileButtonSubmit));
 };
 
 //открытие окна добавления новой карточки
 buttonAddCard.addEventListener('click', function () {
   clearValidation(newPlaceForm, validationConfig);
-  openModal(createCardPopup); 
+  openModal(popupCardCreate); 
 });
 
 //добавление картинки
 formPopup.addEventListener('submit', submitAddCard);
   function submitAddCard(evt) {
   evt.preventDefault();
-  renderLoading(true, submitCardButton);
+  renderLoading(true, cardButtonSubmit);
   const nameValue = typeName.value;
   const linkValue = typeLink.value;
   addNewCard(nameValue, linkValue)
@@ -129,10 +129,10 @@ formPopup.addEventListener('submit', submitAddCard);
     const newCard = createCards(cardData, deleteCard, changeLike, openImage, userId,);
     placesList.prepend(newCard);
     formPopup.reset();
-  closeModal(createCardPopup);
+  closeModal(popupCardCreate);
   })
     .catch((err) => console.log(err))
-    .finally(() => renderLoading(false, submitCardButton));
+    .finally(() => renderLoading(false, cardButtonSubmit));
 };
 
 function changeLikeHandler(cardId, counterLike, likeButton) {

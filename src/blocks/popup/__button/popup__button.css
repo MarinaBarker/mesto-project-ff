@@ -11,7 +11,7 @@
   border-radius: 2px;
   border: none;
   transition: visibility 0s, background 0.3s;
-  margin-top: 48px;
+  margin-top: 20px;
 }
 
 .popup__button:hover {
@@ -20,7 +20,7 @@
 }
 
 .popup__button_disabled:disabled {
-  background: #F6F6F6;
+  background: #FFFFFF;
   color:rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(0, 0, 0, 0.2);
 }
