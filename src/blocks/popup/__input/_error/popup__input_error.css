@@ -1,0 +1,13 @@
+.popup__error {
+    display: block;
+    min-height: 28px;
+} 
+
+.popup__input-error_active {
+    color: red;
+    font-size: 12px;
+}
+
+.popup__input_type_error { 
+    border-bottom: 1px solid red;
+  }
