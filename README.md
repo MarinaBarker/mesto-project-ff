@@ -43,9 +43,9 @@
 `$ npm run dev`
 
 <h2>Ссылки:</h2>
-<a href="https://www.figma.com/design/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=0-1">Макет 1</a>
-<a href="https://www.figma.com/design/bjyvbKKJN2naO0ucURl2Z0/JavaScript.-Sprint-5?node-id=0-1">Макет 2</a>
-<a href="https://www.figma.com/design/kRVLKwYG3d1HGLvh7JFWRT/JavaScript.-Sprint-6?node-id=0-1">Макет 3</a>
+<a href="https://www.figma.com/design/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=0-1">Макет 1</a> <br>
+<a href="https://www.figma.com/design/bjyvbKKJN2naO0ucURl2Z0/JavaScript.-Sprint-5?node-id=0-1">Макет 2</a> <br>
+<a href="https://www.figma.com/design/kRVLKwYG3d1HGLvh7JFWRT/JavaScript.-Sprint-6?node-id=0-1">Макет 3</a> <br>
 <a href="https://www.figma.com/design/PSdQFRHoxXJFs2FH8IXViF/JavaScript.-Sprint-9?node-id=0-1">Макет 4</a>
 <li>
   <a href="https://github.com/MarinaBarker/mesto-project-ff.git">Ссылка на GitHub Pages</a>
